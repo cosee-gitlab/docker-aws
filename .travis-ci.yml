@@ -1,0 +1,16 @@
+sudo: required
+
+env:
+  - CONTAINER_IMAGE_NAME=quay.io/cosee-gitlab/docker-aws
+
+services:
+  - docker
+
+script:
+  - ./build.sh
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      docker login -u="$QUAY_USER" -p="$QUAY_APIKEY" quay.io;
+      docker push $CONTAINER_IMAGE_NAME;
+    fi
