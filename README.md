@@ -1,1 +1,1 @@
-Docker Image with awscli installed.
+Docker Image with awscli and zip installed.
