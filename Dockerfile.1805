@@ -1,7 +1,0 @@
-FROM docker:18.05
-
-RUN mkdir -p /aws && \
-    apk -Uuv add py-pip zip && \
-    rm /var/cache/apk/*
-
-RUN pip install awscli
