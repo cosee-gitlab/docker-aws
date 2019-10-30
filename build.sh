@@ -1,6 +1,13 @@
 docker build \
         -t $CONTAINER_IMAGE_NAME:latest \
         -t $CONTAINER_IMAGE_NAME:stable \
+        -t $CONTAINER_IMAGE_NAME:19.03 \
+        --build-arg DOCKER_VERSION=19.03 \
+        .
+        
+docker build \
+        -t $CONTAINER_IMAGE_NAME:latest \
+        -t $CONTAINER_IMAGE_NAME:stable \
         -t $CONTAINER_IMAGE_NAME:18.09 \
         --build-arg DOCKER_VERSION=18.09 \
         .
